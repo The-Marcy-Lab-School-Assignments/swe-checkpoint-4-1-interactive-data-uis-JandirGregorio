@@ -26,36 +26,25 @@ export const renderProducts = (products) => {
 
 export const renderProductDetails = (product) => {
   const productDetails = document.querySelector('#product-details');
-  productDetails.innerHTML = '';
   productDetails.classList.remove('hidden');
 
-  const productH2 = document.createElement('h2');
-  const productImage = document.createElement('img');
-  const productParPrice = document.createElement('p');
-  const productPrice = document.createElement('span');
-  const productDescription = document.createElement('p');
-  const productParRating = document.createElement('p');
-  const productRating = document.createElement('span');
+  const productTitle = document.querySelector('#product-title');
+  const productImage = document.querySelector('#product-thumbnail');
+  const productPrice = document.querySelector('#product-price');
+  const productDescription = document.querySelector('#product-description');
+  const productRating = document.querySelector('#product-rating');
 
-  productH2.id = 'product-title';
-  productImage.id = 'product-thumbnail';
-  productParPrice.id = 'product-price';
-  productDescription.id = 'product-description';
-  productRating.id = 'product-rating';
-
-  productH2.textContent = product.title;
+  productTitle.textContent = '';
+  productImage.src = '';
+  productImage.alt = '';
+  productPrice.textContent = '';
+  productDescription.textContent = ''
+  productRating.textContent = '';
+  
+  productTitle.textContent = product.title;
   productImage.src = product.thumbnail;
-  productImage.alt = product.title;
-  productParPrice.textContent = 'Price: $';
-  productPrice.textContent = product.price;
+  productImage.alt = product.titi;
+  productPrice.textContent = `$${product.price}`;
   productDescription.textContent = product.description;
-  productParRating.textContent = 'Rating: ';
   productRating.textContent = product.rating;
-  productRating.textContent += ' / 5';
-
-  // Append spans
-  productParPrice.append(productPrice);
-  productParRating.append(productRating);
-
-  productDetails.append(productH2, productImage, productParPrice, productDescription, productParRating);
 };
