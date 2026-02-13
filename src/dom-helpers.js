@@ -43,7 +43,7 @@ export const renderProductDetails = (product) => {
   
   productTitle.textContent = product.title;
   productImage.src = product.thumbnail;
-  productImage.alt = product.titi;
+  productImage.alt = product.title;
   productPrice.textContent = `$${product.price}`;
   productDescription.textContent = product.description;
   productRating.textContent = product.rating;
